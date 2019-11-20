@@ -57,16 +57,12 @@ class App extends React.Component {
   }
 
   updateTicketElapsedWaitTime() {
-    console.log("check");
+    console.log('check');
     let newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.forEach((ticket) =>
       ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
     );
     this.setState({masterTicketList: newMasterTicketList})
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.waitTimeUpdateTimer);
   }
 
   render(){
